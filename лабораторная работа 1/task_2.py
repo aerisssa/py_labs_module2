@@ -1,5 +1,7 @@
 # TODO: импортируйте классы, созданные в ходе выполнения прошлого задания
 from task_1 import Refrigerator, Phone, ElectricKettle
+
+
 if __name__ == "__main__":
     fridge = Refrigerator(temperature=4, capacity=200)
     phone = Phone(brand="Samsung", battery_capacity=4000)
