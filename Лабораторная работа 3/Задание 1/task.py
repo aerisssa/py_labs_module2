@@ -1,5 +1,5 @@
 class Book:
-    """ Базовый класс книги. """
+    """Базовый класс книги."""
 
     def __init__(self, name: str, author: str):
         self._name = name  # Используем _name для обозначения "защищенного" атрибута
@@ -37,8 +37,9 @@ class PaperBook(Book):
             raise ValueError("Количество страниц должно быть больше 0.")
         self._pages = pages
 
-    def __str__(self):  # Перегружен для добавления информации о страницах
-        return f"Бумажная книга {self.name}. Автор {self.author}. Количество страниц: {self.pages}"
+    def __str__(self):
+        return (f"Бумажная книга {self.name}. Автор {self.author}. "
+                f"Количество страниц: {self.pages}")
 
 
 class AudioBook(Book):
@@ -58,19 +59,20 @@ class AudioBook(Book):
             raise ValueError("Продолжительность должна быть больше 0.")
         self._duration = duration
 
-    def __str__(self):  # Перегружен для добавления информации о продолжительности
-        return f"Аудиокнига {self.name}. Автор {self.author}. Продолжительность: {self.duration} часов"
+    def __str__(self):
+        return (f"Аудиокнига {self.name}. Автор {self.author}. "
+                f"Продолжительность: {self.duration} часов")
 
 
 # Пример использования
 book1 = Book("Название книги", "Автор")
 print(book1)  # Вывод: Книга Название книги. Автор Автор
-print(repr(book1)) # Вывод: Book(name='Название книги', author='Автор')
+print(repr(book1))  # Вывод: Book(name='Название книги', author='Автор')
 
 paper_book = PaperBook("Название бумажной книги", "Автор", 200)
 print(paper_book)  # Вывод: Бумажная книга Название бумажной книги. Автор Автор. Количество страниц: 200
-print(repr(paper_book)) # Вывод: PaperBook(name='Название бумажной книги', author='Автор')
+print(repr(paper_book))  # Вывод: PaperBook(name='Название бумажной книги', author='Автор')
 
 audio_book = AudioBook("Название аудиокниги", "Автор", 5.5)
 print(audio_book)  # Вывод: Аудиокнига Название аудиокниги. Автор Автор. Продолжительность: 5.5 часов
-print(repr(audio_book)) # Вывод: AudioBook(name='Название аудиокниги', author='Автор')
+print(repr(audio_book))  # Вывод: AudioBook(name='Название аудиокниги', author='Автор')
