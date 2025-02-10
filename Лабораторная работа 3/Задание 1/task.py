@@ -2,7 +2,7 @@ class Book:
     """Базовый класс книги."""
 
     def __init__(self, name: str, author: str):
-        self._name = name  # Используем _name для обозначения "защищенного" атрибута
+        self._name = name  # Используем _name для обозначения защищенного атрибута.
         self._author = author
 
     @property
